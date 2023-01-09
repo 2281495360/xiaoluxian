@@ -1,7 +1,9 @@
 <template>
-  <div class="ui huge borderless main fixed shadow menu">
+  <div class="ui massive borderless main fixed shadow menu">
     <div class="ui container">
-      <div class="item" id="logo">logo</div>
+      <div class="item" id="logo">
+        <img class="ui tiny image" src="@/assets/logo.png" />
+      </div>
       <a class="item">免费课</a>
       <a class="item">实战课</a>
       <a class="item">体系课</a>
