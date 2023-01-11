@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div>
+    <div style="margin-left: 20px; padding-top: 5px">
       <a-button type="link">更多体系课程 >></a-button>
     </div>
   </div>
