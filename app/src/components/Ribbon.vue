@@ -13,12 +13,14 @@
     <div class="ribbon__side ribbon__side--r"></div>
 
     <!-- The content -->
-    <div class="ribbon__content">畅销榜</div>
+    <div class="ribbon__content">{{ rankName }}</div>
     <div class="triangle-top-left"></div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps(["mainColor", "sideColor", "rankName"]);
+</script>
 
 <style lang="less" scoped>
 .triangle-top-right {
@@ -44,7 +46,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-
+  user-select: none;
   /* Size */
   height: 3rem;
 
@@ -54,9 +56,9 @@
 
 .ribbon__content {
   /* Background color */
-  background-color: #9ca3af;
+  background-image: v-bind(mainColor);
   z-index: 1;
-
+  line-height: 40px;
   height: 100%;
   width: 100%;
 }
@@ -68,19 +70,21 @@
   z-index: 1;
 
   /* Background */
-  border: 1.5rem solid #d1d5db;
+  border: 1.5rem solid v-bind(sideColor);
 }
 
 .ribbon__side--l {
   /* Position */
   left: -2.25rem;
-  border-color: #d1d5db #d1d5db #d1d5db transparent;
+  border-color: v-bind(sideColor) v-bind(sideColor) v-bind(sideColor)
+    transparent;
 }
 
 .ribbon__side--r {
   /* Position */
   right: -2.25rem;
-  border-color: #d1d5db transparent #d1d5db #d1d5db;
+  border-color: v-bind(sideColor) transparent v-bind(sideColor)
+    v-bind(sideColor);
 }
 
 .ribbon__triangle {
